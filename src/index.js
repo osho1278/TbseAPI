@@ -11,8 +11,11 @@ app.use(function(req, res, next) {
   });
 
   app.use(bodyParser.json());
-var routes = require('./routes'); //importing route
 
+  var auth =require('./middleWares/auth');
+
+var routes = require('./routes'); //importing route
+app.use(auth);
 routes(app);
 
 var server = app.listen(8082, function () {
