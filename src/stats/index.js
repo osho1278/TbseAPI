@@ -41,26 +41,3 @@ exports.listItem= function (req, res) {
         res.send(resultArr)
       });
   }
-<<<<<<< HEAD:src/items/index.js
-exports.addItem= function (req, res) {
-    var name = req.body.name;
-    var quantity = req.body.quantity;
-    var operation = req.body.operation;
-    console.log(req.body);
-    if(name && quantity && operation){
-    con.query("insert into items(`name`,`quantity`,`operation`) values('"+name+"','"+quantity+"','"+operation+"')", function (err, result, fields) {
-        if (err) throw err;
-        console.log(result);
-        if(result.length!=0){
-            res.send(result)
-        }
-        else{
-            res.send(204,'Nocontent');
-        }
-      });
-    }else{
-        res.send(404,'Wrong');
-    }
-  }
-=======
->>>>>>> 99d71dbed979c5e6a397f39204d741876c4f4acd:src/stats/index.js
