@@ -58,6 +58,6 @@ exports.addItem= function (req, res) {
         }
       });
     }else{
-        res.send('Wrong').status(404);
+        res.send(404,'Wrong');
     }
   }

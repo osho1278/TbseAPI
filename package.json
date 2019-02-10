@@ -16,5 +16,10 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/osho1278/nodejsserver.git"
+  },
+  "homepage": "https://bitbucket.org/osho1278/nodejsserver#readme"
 }
