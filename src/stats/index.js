@@ -1,7 +1,7 @@
 var con = require('../db');
 
 exports.listItem= function (req, res) {
-    let resultArr=[];
+    resultArr=[];
     con.query("SELECT * FROM items order by name", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
@@ -40,24 +40,4 @@ exports.listItem= function (req, res) {
     }
         res.send(resultArr)
       });
-  }
-exports.addItem= function (req, res) {
-    var name = req.body.name;
-    var quantity = req.body.quantity;
-    var operation = req.body.operation;
-    console.log(req.body);
-    if(name && quantity && operation){
-    con.query("insert into items(`name`,`quantity`,`operation`) values('"+name+"','"+quantity+"','"+operation+"')", function (err, result, fields) {
-        if (err) throw err;
-        console.log(result);
-        if(result.length!=0){
-            res.send(result)
-        }
-        else{
-            res.send(204,'Nocontent');
-        }
-      });
-    }else{
-        res.send('Wrong').status(404);
-    }
   }
