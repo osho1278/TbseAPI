@@ -1,7 +1,7 @@
 var con = require('../db');
 
 exports.listItem= function (req, res) {
-    let resultArr=[];
+    resultArr=[];
     con.query("SELECT * FROM items order by name", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
@@ -41,6 +41,7 @@ exports.listItem= function (req, res) {
         res.send(resultArr)
       });
   }
+<<<<<<< HEAD:src/items/index.js
 exports.addItem= function (req, res) {
     var name = req.body.name;
     var quantity = req.body.quantity;
@@ -61,3 +62,5 @@ exports.addItem= function (req, res) {
         res.send(404,'Wrong');
     }
   }
+=======
+>>>>>>> 99d71dbed979c5e6a397f39204d741876c4f4acd:src/stats/index.js
