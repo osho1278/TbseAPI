@@ -5,7 +5,8 @@ module.exports = function(app) {
 
     var category=require('./category');
     var dealers=require('./dealer');
-
+    var history=require('./history');
+    
     var stats= require('./stats')
     var liquor=require('./liquor')
     var inventory=require('./inventory')
@@ -14,6 +15,10 @@ module.exports = function(app) {
       .get(users.listUsers)
       .post(users.addUser);
     
+      app.route('/myTransactionHistory')
+      .get(history.myTransactionHistory)
+    
+
     app.route('/stores')
       .get(store.listStores)
       .post(store.addStore);
@@ -30,8 +35,11 @@ module.exports = function(app) {
     app.route('/login')
     .post(login.login);
 
-    app.route('/stats')
-    .get(stats.listItem)
+    // app.route('/stats')
+    // .get(stats.listItem)
+
+    app.route('/stockHoldings')
+    .get(stats.stockHoldings)
 
 
     app.route('/categories')

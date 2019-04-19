@@ -13,11 +13,11 @@ exports.listUsers= function (req, res) {
     var userName = req.body.userName;
     var password = req.body.password;
     var fullName = req.body.fullName || '';
-    var branch = req.body.branch || '';
-    var role = req.body.role || '';
+    var branch = req.body.basebranch || '';
+    var role = req.body.roles || '';
     console.log(req.body);
     if(userName && password){
-    con.query("insert into users(`userName`,`password`,`fullName`,`role`,`branch`) values('"+userName+"','"+password+"','"+fullName+"','"+role+"','"+branch+"')", function (err, result, fields) {
+    con.query("insert into user(`userName`,`password`,`fullName`,`role`,`branch`) values('"+userName+"','"+password+"','"+fullName+"','"+role+"','"+branch+"')", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
         res.send(result)

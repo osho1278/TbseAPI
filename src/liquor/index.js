@@ -29,7 +29,7 @@ exports.listLiquor= function (req, res) {
     console.log('listUser Called',req.query.name)
 
     let stockReceived = '';
-    con.query("SELECT sum(quantity) as quantity FROM inventory where branchName='"+req.query.branchName+"' and productName='"+req.query.name+"' and approved='true' and transactionType='received'", function (err, result, fields) {
+    con.query("SELECT sum(quantity) as quantity FROM inventory where branchName='"+req.query.branchName+"' and productName='"+req.query.name+"' and approved='true'", function (err, result, fields) {
         if (err) {
             console.log( err);
         }
